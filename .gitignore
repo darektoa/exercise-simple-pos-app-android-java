@@ -1,0 +1,17 @@
+# Gradle files
+.gradle/
+build/
+
+# Local configuration file (sdk.dir)
+local.properties
+
+# Android Studio files
+.idea/
+.DS_Store
+/captures
+.externalNativeBuild
+.cxx
+*.iml
+
+# App build
+app/build/

@@ -1,0 +1,23 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    
+    <!-- White Rounded Background -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M2,6 C2,3.79 3.79,2 6,2 L18,2 C20.21,2 22,3.79 22,6 L22,18 C22,20.21 20.21,22 18,22 L6,22 C3.79,22 2,20.21 2,18 L2,6 Z" />
+
+    <!-- Blue Cashier/POS Monitor Vector -->
+    <path
+        android:fillColor="#FF2196F3"
+        android:pathData="M4,6h16v11H4z M5,7v9h14V7H5z M7,19h10v2H7z M12,17h-2v2h2z" />
+        
+    <!-- Receipt/Bill Detail line inside monitor -->
+    <path
+        android:fillColor="#FF2196F3"
+        android:pathData="M6,9h12v1H6z M6,11h8v1H6z M6,13h5v1H6z" />
+    
+    <!-- Payment Card Simulation on side? keeping it simple as requested -->
+</vector>

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    android:padding="24dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Receipt Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_receipt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@android:color/white"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <!-- Success Icon -->
+                <ImageView
+                    android:id="@+id/image_success"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_gravity="center"
+                    android:src="@android:drawable/ic_dialog_info"
+                    app:tint="@color/teal_200"
+                    android:contentDescription="Success" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:text="Thank you!"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="Your order has been placed successfully"
+                    android:textColor="#757575" />
+
+                <!-- Dashed Separator -->
+                <!-- Dashed Separator Container -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="24dp">
+                    
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@drawable/dash_line"
+                        android:layerType="software"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    <!-- Left Cutout (Negative Space) -->
+                    <View
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:background="@drawable/shape_circle_bg"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:translationX="-36dp" />
+
+                    <!-- Right Cutout (Negative Space) -->
+                    <View
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:background="@drawable/shape_circle_bg"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:translationX="36dp" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- Order Details Grid -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/label_order_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ORDER ID"
+                        android:textSize="12sp"
+                        android:textColor="#9E9E9E"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/text_order_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="#12345"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/label_order_id" />
+
+                    <TextView
+                        android:id="@+id/label_amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="AMOUNT"
+                        android:textSize="12sp"
+                        android:textColor="#9E9E9E"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/text_amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Rp 25.000"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/label_amount" />
+                    
+                    <TextView
+                        android:id="@+id/label_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="DATE &amp; TIME"
+                        android:textSize="12sp"
+                        android:textColor="#9E9E9E"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/text_order_id" />
+                    
+                    <TextView
+                        android:id="@+id/text_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="2024-01-01 12:00"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/label_date" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- Spacing -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp" />
+
+                <!-- Barcode Simulation -->
+                 <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    
+                    <!-- We'll just define varying widths of black views to simulate barcode -->
+                    <View android:layout_width="2dp" android:layout_height="match_parent" android:background="@color/black" android:layout_marginEnd="2dp"/>
+                    <View android:layout_width="4dp" android:layout_height="match_parent" android:background="@color/black" android:layout_marginEnd="1dp"/>
+                    <View android:layout_width="1dp" android:layout_height="match_parent" android:background="@color/black" android:layout_marginEnd="3dp"/>
+                    <View android:layout_width="3dp" android:layout_height="match_parent" android:background="@color/black" android:layout_marginEnd="1dp"/>
+                    <View android:layout_width="2dp" android:layout_height="match_parent" android:background="@color/black" android:layout_marginEnd="2dp"/>
+                    <View android:layout_width="5dp" android:layout_height="match_parent" android:background="@color/black" android:layout_marginEnd="2dp"/>
+                    <View android:layout_width="1dp" android:layout_height="match_parent" android:background="@color/black" android:layout_marginEnd="1dp"/>
+                    <View android:layout_width="3dp" android:layout_height="match_parent" android:background="@color/black" android:layout_marginEnd="3dp"/>
+                     <View android:layout_width="2dp" android:layout_height="match_parent" android:background="@color/black" android:layout_marginEnd="2dp"/>
+                    <View android:layout_width="4dp" android:layout_height="match_parent" android:background="@color/black" android:layout_marginEnd="1dp"/>
+                    <View android:layout_width="1dp" android:layout_height="match_parent" android:background="@color/black" android:layout_marginEnd="3dp"/>
+                    <View android:layout_width="3dp" android:layout_height="match_parent" android:background="@color/black" android:layout_marginEnd="1dp"/>
+                    <View android:layout_width="2dp" android:layout_height="match_parent" android:background="@color/black" android:layout_marginEnd="2dp"/>
+                    <View android:layout_width="5dp" android:layout_height="match_parent" android:background="@color/black" android:layout_marginEnd="2dp"/>
+                    <View android:layout_width="1dp" android:layout_height="match_parent" android:background="@color/black" android:layout_marginEnd="1dp"/>
+                    <View android:layout_width="3dp" android:layout_height="match_parent" android:background="@color/black" android:layout_marginEnd="3dp"/>
+                     <View android:layout_width="2dp" android:layout_height="match_parent" android:background="@color/black" android:layout_marginEnd="2dp"/>
+                    <View android:layout_width="4dp" android:layout_height="match_parent" android:background="@color/black" android:layout_marginEnd="1dp"/>
+                    <View android:layout_width="1dp" android:layout_height="match_parent" android:background="@color/black" android:layout_marginEnd="3dp"/>
+                    <View android:layout_width="3dp" android:layout_height="match_parent" android:background="@color/black" android:layout_marginEnd="1dp"/>
+                    <View android:layout_width="2dp" android:layout_height="match_parent" android:background="@color/black" android:layout_marginEnd="2dp"/>
+                    <View android:layout_width="5dp" android:layout_height="match_parent" android:background="@color/black" android:layout_marginEnd="2dp"/>
+                    <View android:layout_width="1dp" android:layout_height="match_parent" android:background="@color/black" android:layout_marginEnd="1dp"/>
+                    <View android:layout_width="3dp" android:layout_height="match_parent" android:background="@color/black" android:layout_marginEnd="3dp"/>
+                </LinearLayout>
+
+                <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_gravity="center"
+                     android:layout_marginTop="4dp"
+                     android:text="1234 5678 9012"
+                     android:letterSpacing="0.2"
+                     android:textSize="10sp"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/button_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Back to Home"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@id/card_receipt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
