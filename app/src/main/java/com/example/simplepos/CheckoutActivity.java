@@ -41,7 +41,7 @@ public class CheckoutActivity extends AppCompatActivity {
 
         confirmButton.setOnClickListener(v -> {
             // Save Order Logic
-            com.example.simplepos.database.DatabaseHelper dbHelper = new com.example.simplepos.database.DatabaseHelper(this);
+            com.example.simplepos.viewmodel.ProductViewModel productViewModel = new androidx.lifecycle.ViewModelProvider(this).get(com.example.simplepos.viewmodel.ProductViewModel.class);
             String currentDate = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm", java.util.Locale.getDefault()).format(new java.util.Date());
             
             // Generate items summary
@@ -53,7 +53,7 @@ public class CheckoutActivity extends AppCompatActivity {
             if (itemsSummary.length() > 0) itemsSummary.setLength(itemsSummary.length() - 2); // Remove last comma
             
             com.example.simplepos.model.Order newOrder = new com.example.simplepos.model.Order(currentDate, cart.getTotalPrice(), itemsSummary.toString());
-            dbHelper.addOrder(newOrder);
+            productViewModel.insertOrder(newOrder); // Use ViewModel
 
             double totalAmount = cart.getTotalPrice(); // Capture before clearing
             cart.clear();
